@@ -1,5 +1,5 @@
 # Databricks notebook source
-dbutils.widgets.text("FilePath", "dbfs:/home/parth.vakil@databricks.com/")
+dbutils.widgets.text("FilePath", "dbfs:/home/" + (spark.sql("SELECT current_user() as user").collect()[0]["user"]) + "/")
 
 # COMMAND ----------
 
